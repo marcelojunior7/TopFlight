@@ -1,2 +1,2 @@
 # Top Flight
-A game made in javascrip
+A game made in javascript

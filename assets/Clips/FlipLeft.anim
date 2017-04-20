@@ -46,6 +46,44 @@
             ]
           }
         }
+      },
+      "heroiSombra2": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": [
+              {
+                "frame": 0,
+                "value": {
+                  "__uuid__": "4ba09839-6a5e-4324-b052-d32c3e17443a"
+                }
+              },
+              {
+                "frame": 0.16666666666666666,
+                "value": {
+                  "__uuid__": "9f90ab50-e99c-49f9-b7cd-75edf9dac368"
+                }
+              },
+              {
+                "frame": 0.3333333333333333,
+                "value": {
+                  "__uuid__": "7cfca5e4-9697-4417-941b-b5b405bf070e"
+                }
+              },
+              {
+                "frame": 0.5,
+                "value": {
+                  "__uuid__": "9f90ab50-e99c-49f9-b7cd-75edf9dac368"
+                }
+              },
+              {
+                "frame": 0.6666666666666666,
+                "value": {
+                  "__uuid__": "4ba09839-6a5e-4324-b052-d32c3e17443a"
+                }
+              }
+            ]
+          }
+        }
       }
     }
   },

@@ -37,7 +37,7 @@ cc.Class({
     
     fire: function() {
         var bulletNode = cc.instantiate(this.bulletPrefab);
-        bulletNode.setPosition(new cc.Vec2(0, 0));
+        bulletNode.setPosition(new cc.Vec2(0,0));
         this.node.addChild(bulletNode);
     },
 
@@ -48,7 +48,7 @@ cc.Class({
     },
 
     update: function (dt) {
-        this.node.y -= this.speed * dt;
+        this.node.x -= this.speed * dt;
         
         if (this.waitShoot >= 0) {
             this.waitShoot -= dt;
@@ -60,9 +60,15 @@ cc.Class({
         if (this.waitMove >= 0) {
             this.waitMove -= dt;
         } else {
-            var playerX = cc.find('Canvas').getChildByName('player').position.x;
-            var moveAction = cc.moveTo(1, cc.p(playerX, this.node.y)).easing(cc.easeCubicActionOut());
-            this.node.runAction(moveAction);
+            var player = cc.find('Canvas').getChildByName('player');
+
+            if (this.node.x <= player.position.x) {
+                return;
+            }
+            
+            var moveGo = cc.moveTo(1, cc.p(this.node.x, player.position.y)).easing(cc.easeCubicActionOut());
+            var moveBack = cc.moveTo(1, cc.p(this.node.position)).easing(cc.easeCubicActionOut());
+            this.node.runAction(cc.sequence(moveGo, moveBack));
             this.waitMove = this.delayMove;
         }
     },

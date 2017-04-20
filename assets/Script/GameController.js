@@ -11,16 +11,23 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
         cc.director.getCollisionManager().enabled = true;
-        cc.director.getCollisionManager().enabledDebugDraw = true;
+        //cc.director.getCollisionManager().enabledDebugDraw = true;
+        
         this.canvas = cc.find('Canvas');
         var self = this;
         cc.eventManager.addListener({
             event: cc.EventListener.TOUCH_ONE_BY_ONE,
             onTouchBegan: function(touch, event) {
+                
+                if (self.isMoving) {
+                    return;
+                }
+                
+                self.isMoving = true;
                 var touchLoc = touch.getLocation();
                 var locationInNode = self.canvas.convertToNodeSpaceAR(touchLoc);
                 var moveAction = cc.moveTo(2, cc.p(locationInNode)).easing(cc.easeCubicActionOut());
-                self.player.runAction(moveAction);
+                self.player.runAction(cc.sequence(moveAction, cc.callFunc(self.moveActionDone, self)));
                 locationInNode.x > self.player.position.x ? self.player.getComponent('Player').flipRight() : self.player.getComponent('Player').flipLeft();
                 return true
             },
@@ -32,6 +39,11 @@ cc.Class({
             }
         }, self.node);
 
+    },
+    
+    moveActionDone: function() {
+        this.isMoving = false;
+        cc.log("CHEGOU");
     },
     
     buttonFire: function() {
