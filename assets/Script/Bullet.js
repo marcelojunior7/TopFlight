@@ -16,8 +16,6 @@ cc.Class({
     },
     
     onCollisionEnter: function (other, self) {
-        cc.log("other", other);
-        cc.log("self", self);
         this.node.destroy();
     },
 

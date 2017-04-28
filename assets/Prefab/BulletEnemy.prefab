@@ -75,8 +75,8 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
-      "b": 255,
+      "g": 116,
+      "b": 7,
       "a": 255
     },
     "_cascadeOpacityEnabled": true,
@@ -182,12 +182,12 @@
     "tag": 0,
     "_offset": {
       "__type__": "cc.Vec2",
-      "x": 0,
+      "x": -1,
       "y": 0
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 20,
+      "width": 15,
       "height": 20
     }
   },

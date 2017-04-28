@@ -284,7 +284,7 @@
       "__id__": 1
     },
     "_enabled": true,
-    "tag": 0,
+    "tag": 1,
     "_offset": {
       "__type__": "cc.Vec2",
       "x": 0,
@@ -359,9 +359,9 @@
     "bulletPrefab": {
       "__uuid__": "f2eb91e1-67a5-497c-ac96-128a7f8280c9"
     },
-    "speed": 100,
-    "delayMove": 1.5,
-    "delayShoot": 1
+    "speed": 160,
+    "delayMove": 1.2,
+    "delayShoot": 0.5
   },
   {
     "__type__": "cc.PrefabInfo",

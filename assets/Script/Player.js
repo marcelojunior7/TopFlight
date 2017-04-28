@@ -8,6 +8,7 @@ cc.Class({
             default: null,
             type: cc.Prefab
         },
+        lifes:0
     },
 
     onLoad: function () {
@@ -34,6 +35,18 @@ cc.Class({
         var bulletNode = cc.instantiate(this.bulletPrefab);
         bulletNode.setPosition(new cc.Vec2(0,0));
         this.node.addChild(bulletNode);
+    },
+    
+    onCollisionEnterCallback:function(callback) {
+        this.onCollisionCallback = callback;
+    },
+    
+    onCollisionEnter: function (other, self) {
+        if (other.tag === self.tag) {
+            return;
+        }
+        this.lifes--;
+        this.onCollisionCallback();
     },
 
     update: function (dt) {

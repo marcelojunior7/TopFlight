@@ -36,13 +36,13 @@
         "__id__": 2
       },
       {
-        "__id__": 27
-      },
-      {
         "__id__": 29
       },
       {
-        "__id__": 34
+        "__id__": 31
+      },
+      {
+        "__id__": 37
       }
     ],
     "_localZOrder": 0,
@@ -93,6 +93,9 @@
       },
       {
         "__id__": 18
+      },
+      {
+        "__id__": 26
       }
     ],
     "_rotationX": 0,
@@ -114,7 +117,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 26
+        "__id__": 28
       }
     ],
     "_prefab": null,
@@ -260,7 +263,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 475,
+      "x": 713,
       "y": 0
     },
     "_skewX": 0,
@@ -297,7 +300,7 @@
     "_target": null,
     "_alignFlags": 37,
     "_left": 949,
-    "_right": 0,
+    "_right": -238,
     "_top": 0,
     "_bottom": 0,
     "_verticalCenter": 0,
@@ -390,7 +393,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -475,
+      "x": -579,
       "y": 0
     },
     "_skewX": 0,
@@ -426,7 +429,7 @@
     "isAlignOnce": true,
     "_target": null,
     "_alignFlags": 13,
-    "_left": 0,
+    "_left": -104,
     "_right": 480,
     "_top": 0,
     "_bottom": 0,
@@ -520,7 +523,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -475,
+      "x": -610,
       "y": 0
     },
     "_skewX": 0,
@@ -556,7 +559,7 @@
     "isAlignOnce": true,
     "_target": null,
     "_alignFlags": 13,
-    "_left": 0,
+    "_left": -135,
     "_right": 480,
     "_top": 0,
     "_bottom": 0,
@@ -848,7 +851,8 @@
     "_enabled": true,
     "bulletPrefab": {
       "__uuid__": "c0c4887b-e276-447d-8a3f-6555965cd756"
-    }
+    },
+    "lifes": 20
   },
   {
     "__type__": "cc.Animation",
@@ -879,7 +883,7 @@
       "__id__": 18
     },
     "_enabled": true,
-    "tag": 0,
+    "tag": 1,
     "_offset": {
       "__type__": "cc.Vec2",
       "x": 0,
@@ -944,6 +948,84 @@
     ]
   },
   {
+    "__type__": "cc.Node",
+    "_name": "lifesContent",
+    "_objFlags": 0,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_cascadeOpacityEnabled": true,
+    "_parent": {
+      "__id__": 2
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0.5
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 864,
+      "height": 30
+    },
+    "_children": [],
+    "_rotationX": 0,
+    "_rotationY": 0,
+    "_scaleX": 1,
+    "_scaleY": 1,
+    "_position": {
+      "__type__": "cc.Vec2",
+      "x": -432,
+      "y": 273
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_localZOrder": 0,
+    "_globalZOrder": 0,
+    "_tag": -1,
+    "_opacityModifyRGB": false,
+    "_id": "93af0yoGttA9bvqGVurRVSb",
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 27
+      }
+    ],
+    "_prefab": null,
+    "groupIndex": 0
+  },
+  {
+    "__type__": "cc.Widget",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 26
+    },
+    "_enabled": true,
+    "isAlignOnce": true,
+    "_target": null,
+    "_alignFlags": 41,
+    "_left": 0.05,
+    "_right": 0.05,
+    "_top": 0.05,
+    "_bottom": 0,
+    "_verticalCenter": 0,
+    "_horizontalCenter": 0,
+    "_isAbsLeft": false,
+    "_isAbsRight": false,
+    "_isAbsTop": false,
+    "_isAbsBottom": true,
+    "_isAbsHorizontalCenter": true,
+    "_isAbsVerticalCenter": true,
+    "_originalWidth": 0,
+    "_originalHeight": 0
+  },
+  {
     "__type__": "cc.Canvas",
     "_name": "",
     "_objFlags": 0,
@@ -1005,7 +1087,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 28
+        "__id__": 30
       }
     ],
     "_prefab": null,
@@ -1016,7 +1098,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 27
+      "__id__": 29
     },
     "_enabled": true,
     "player": {
@@ -1051,7 +1133,7 @@
     },
     "_children": [
       {
-        "__id__": 30
+        "__id__": 32
       }
     ],
     "_rotationX": 0,
@@ -1060,8 +1142,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 886,
-      "y": 330
+      "x": 1075,
+      "y": 418
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -1073,10 +1155,13 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 32
+        "__id__": 34
       },
       {
-        "__id__": 33
+        "__id__": 35
+      },
+      {
+        "__id__": 36
       }
     ],
     "_prefab": null,
@@ -1096,7 +1181,7 @@
     },
     "_cascadeOpacityEnabled": true,
     "_parent": {
-      "__id__": 29
+      "__id__": 31
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1128,7 +1213,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 31
+        "__id__": 33
       }
     ],
     "_prefab": null,
@@ -1139,7 +1224,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 30
+      "__id__": 32
     },
     "_enabled": true,
     "_useOriginalSize": false,
@@ -1160,10 +1245,10 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 29
+      "__id__": 31
     },
     "_enabled": true,
-    "spawnTime": 5,
+    "spawnTime": 1,
     "enemyPrefab": {
       "__uuid__": "ec78fbde-6e87-430e-990d-d34d071afa34"
     }
@@ -1173,7 +1258,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 29
+      "__id__": 31
     },
     "_enabled": true,
     "_spriteFrame": {
@@ -1193,6 +1278,32 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_atlas": null
+  },
+  {
+    "__type__": "cc.Widget",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 31
+    },
+    "_enabled": true,
+    "isAlignOnce": true,
+    "_target": null,
+    "_alignFlags": 32,
+    "_left": 0,
+    "_right": -0.171875,
+    "_top": 0,
+    "_bottom": 0,
+    "_verticalCenter": 0,
+    "_horizontalCenter": 0,
+    "_isAbsLeft": true,
+    "_isAbsRight": false,
+    "_isAbsTop": true,
+    "_isAbsBottom": true,
+    "_isAbsHorizontalCenter": true,
+    "_isAbsVerticalCenter": true,
+    "_originalWidth": 0,
+    "_originalHeight": 0
   },
   {
     "__type__": "cc.Node",
@@ -1218,11 +1329,11 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 100,
-      "height": 40
+      "height": 60
     },
     "_children": [
       {
-        "__id__": 35
+        "__id__": 38
       }
     ],
     "_rotationX": 0,
@@ -1244,13 +1355,13 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 37
-      },
-      {
-        "__id__": 38
-      },
-      {
         "__id__": 40
+      },
+      {
+        "__id__": 41
+      },
+      {
+        "__id__": 43
       }
     ],
     "_prefab": null,
@@ -1270,7 +1381,7 @@
     },
     "_cascadeOpacityEnabled": true,
     "_parent": {
-      "__id__": 34
+      "__id__": 37
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1302,7 +1413,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 36
+        "__id__": 39
       }
     ],
     "_prefab": null,
@@ -1313,7 +1424,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 35
+      "__id__": 38
     },
     "_enabled": true,
     "_useOriginalSize": false,
@@ -1334,7 +1445,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 34
+      "__id__": 37
     },
     "_enabled": true,
     "_spriteFrame": {
@@ -1360,7 +1471,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 34
+      "__id__": 37
     },
     "_enabled": true,
     "transition": 2,
@@ -1388,7 +1499,7 @@
     },
     "clickEvents": [
       {
-        "__id__": 39
+        "__id__": 42
       }
     ],
     "_N$interactable": true,
@@ -1414,13 +1525,13 @@
       "__uuid__": "29158224-f8dd-4661-a796-1ffab537140e"
     },
     "_N$target": {
-      "__id__": 34
+      "__id__": 37
     }
   },
   {
     "__type__": "cc.ClickEvent",
     "target": {
-      "__id__": 27
+      "__id__": 29
     },
     "component": "GameController",
     "handler": "buttonFire",
@@ -1431,7 +1542,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 34
+      "__id__": 37
     },
     "_enabled": true,
     "isAlignOnce": true,
@@ -1440,7 +1551,7 @@
     "_left": 0.8427083333333333,
     "_right": 0.05,
     "_top": 0,
-    "_bottom": 0.05,
+    "_bottom": 0.034375,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
     "_isAbsLeft": false,

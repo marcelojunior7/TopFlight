@@ -13,7 +13,9 @@ cc.Class({
         cc.director.getCollisionManager().enabled = true;
         //cc.director.getCollisionManager().enabledDebugDraw = true;
         
+        this.prepareLifes();
         this.canvas = cc.find('Canvas');
+        
         var self = this;
         cc.eventManager.addListener({
             event: cc.EventListener.TOUCH_ONE_BY_ONE,
@@ -22,13 +24,12 @@ cc.Class({
                 if (self.isMoving) {
                     return;
                 }
-                
                 self.isMoving = true;
                 var touchLoc = touch.getLocation();
                 var locationInNode = self.canvas.convertToNodeSpaceAR(touchLoc);
-                var moveAction = cc.moveTo(2, cc.p(locationInNode)).easing(cc.easeCubicActionOut());
+                var moveAction = cc.moveTo(1, cc.p(locationInNode)).easing(cc.easeBackOut());
                 self.player.runAction(cc.sequence(moveAction, cc.callFunc(self.moveActionDone, self)));
-                locationInNode.x > self.player.position.x ? self.player.getComponent('Player').flipRight() : self.player.getComponent('Player').flipLeft();
+                locationInNode.y > self.player.position.y ? self.player.getComponent('Player').flipRight() : self.player.getComponent('Player').flipLeft();
                 return true
             },
             onTouchMoved: function(touch, event) {
@@ -39,6 +40,45 @@ cc.Class({
             }
         }, self.node);
 
+
+        this.player.getComponent('Player').onCollisionEnterCallback(function() {
+            self.removeLife();
+        });
+    },
+    
+    prepareLifes: function() {
+        this.lifes = [];
+        this.lifesContent = cc.find('Canvas').getChildByName('lifesContent');
+        for (var i = 0; i < this.player.getComponent('Player').lifes; i++) {
+            this.addLife();
+        }
+    },
+    
+    addLife: function() {
+        var node = new cc.Node("New Sprite");
+        node.parent = this.lifesContent;
+        node.setContentSize(30, 30);
+        node.setPosition(this.lifes.length * 30, node.position.y);
+        
+        var url = cc.url.raw("Texture/life.png");
+        var texture = cc.textureCache.addImage(url);
+        
+        var spriteLife = node.addComponent(cc.Sprite);
+        spriteLife.sizeMode = cc.Sprite.SizeMode.CUSTOM;
+        spriteLife.spriteFrame = new cc.SpriteFrame(texture);
+        
+        this.lifes.push(node);
+    },
+    
+    removeLife:function() {
+        if (this.lifes.length > 0) {
+            var lifeNode = this.lifes[this.lifes.length-1];
+            this.lifes.pop();
+            lifeNode.destroy();
+            if (this.lifes.length === 0) {
+                cc.director.loadScene('GameOver');
+            }
+        }
     },
     
     moveActionDone: function() {

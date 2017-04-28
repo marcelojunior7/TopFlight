@@ -42,8 +42,9 @@ cc.Class({
     },
 
     onCollisionEnter: function (other, self) {
-        cc.log("other", other);
-        cc.log("self", self);
+        if (other.tag === self.tag) {
+            return;
+        }
         this.node.destroy();
     },
 
@@ -66,8 +67,8 @@ cc.Class({
                 return;
             }
             
-            var moveGo = cc.moveTo(1, cc.p(this.node.x, player.position.y)).easing(cc.easeCubicActionOut());
-            var moveBack = cc.moveTo(1, cc.p(this.node.position)).easing(cc.easeCubicActionOut());
+            var moveGo = cc.moveTo(1.8, cc.p(this.node.x, player.position.y)).easing(cc.easeCubicActionOut());
+            var moveBack = cc.moveTo(1.8, cc.p(this.node.position)).easing(cc.easeCubicActionOut());
             this.node.runAction(cc.sequence(moveGo, moveBack));
             this.waitMove = this.delayMove;
         }
