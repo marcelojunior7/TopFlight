@@ -249,10 +249,10 @@
         "__id__": 13
       },
       {
-        "__id__": 21
+        "__id__": 22
       },
       {
-        "__id__": 23
+        "__id__": 24
       }
     ],
     "_rotationX": 0,
@@ -410,7 +410,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 310.08,
+      "width": 281.1,
       "height": 60
     },
     "_children": [],
@@ -455,8 +455,10 @@
     "_fontSize": 60,
     "_lineHeight": 60,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "1ae79c72-4cb0-49d6-983b-97576c3e66ef"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_N$string": "Game Over",
     "_N$horizontalAlign": 1,
@@ -613,8 +615,10 @@
     "_fontSize": 20,
     "_lineHeight": 40,
     "_enableWrapText": false,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "1ae79c72-4cb0-49d6-983b-97576c3e66ef"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_N$string": "PLAY",
     "_N$horizontalAlign": 1,
@@ -780,11 +784,40 @@
     "_enabled": true,
     "modal": {
       "__id__": 6
+    },
+    "labelScore": {
+      "__id__": 21
+    },
+    "labelRecord": {
+      "__id__": 23
     }
   },
   {
+    "__type__": "cc.Label",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 22
+    },
+    "_enabled": true,
+    "_useOriginalSize": false,
+    "_actualFontSize": 30,
+    "_fontSize": 30,
+    "_lineHeight": 30,
+    "_enableWrapText": true,
+    "_N$file": {
+      "__uuid__": "1ae79c72-4cb0-49d6-983b-97576c3e66ef"
+    },
+    "_isSystemFontUsed": false,
+    "_spacingX": 0,
+    "_N$string": "Score: 100",
+    "_N$horizontalAlign": 1,
+    "_N$verticalAlign": 1,
+    "_N$overflow": 0
+  },
+  {
     "__type__": "cc.Node",
-    "_name": "New Label",
+    "_name": "score",
     "_objFlags": 0,
     "_opacity": 255,
     "_color": {
@@ -805,7 +838,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 145.09,
+      "width": 127.98,
       "height": 30
     },
     "_children": [],
@@ -828,7 +861,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 22
+        "__id__": 21
       }
     ],
     "_prefab": null,
@@ -839,7 +872,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 21
+      "__id__": 24
     },
     "_enabled": true,
     "_useOriginalSize": false,
@@ -847,17 +880,19 @@
     "_fontSize": 30,
     "_lineHeight": 30,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "1ae79c72-4cb0-49d6-983b-97576c3e66ef"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
-    "_N$string": "Score: 100",
+    "_N$string": "Record: 100",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$overflow": 0
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Label",
+    "_name": "record",
     "_objFlags": 0,
     "_opacity": 255,
     "_color": {
@@ -878,7 +913,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 163.43,
+      "width": 146.19,
       "height": 30
     },
     "_children": [],
@@ -901,32 +936,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 24
+        "__id__": 23
       }
     ],
     "_prefab": null,
     "groupIndex": 0
-  },
-  {
-    "__type__": "cc.Label",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 23
-    },
-    "_enabled": true,
-    "_useOriginalSize": false,
-    "_actualFontSize": 30,
-    "_fontSize": 30,
-    "_lineHeight": 30,
-    "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
-    "_spacingX": 0,
-    "_N$string": "Record: 100",
-    "_N$horizontalAlign": 1,
-    "_N$verticalAlign": 1,
-    "_N$overflow": 0
   },
   {
     "__type__": "cc.Widget",

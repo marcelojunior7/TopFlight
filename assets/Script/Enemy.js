@@ -10,13 +10,15 @@ cc.Class({
         },
         speed:0,
         delayMove:0,
-        delayShoot:0
+        delayShoot:0,
+        points:10,
     },
 
     onLoad: function () {
         this.anim = this.getComponent(cc.Animation);
         this.waitShoot = this.delayShoot;
         this.waitMove = this.delayMove;
+        this.canvas = cc.find('Canvas');
     },
 
     flipLeft: function() {
@@ -37,14 +39,17 @@ cc.Class({
     
     fire: function() {
         var bulletNode = cc.instantiate(this.bulletPrefab);
-        bulletNode.setPosition(new cc.Vec2(0,0));
-        this.node.addChild(bulletNode);
+        bulletNode.setPosition(this.node.position);
+        this.canvas.addChild(bulletNode);
     },
 
     onCollisionEnter: function (other, self) {
         if (other.tag === self.tag) {
             return;
         }
+        var score = cc.sys.localStorage.getItem('Score');
+        var newScore = score !== null ? parseInt(score) + this.points : this.points;
+        cc.sys.localStorage.setItem('Score', newScore);
         this.node.destroy();
     },
 

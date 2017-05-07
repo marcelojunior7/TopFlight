@@ -13,6 +13,7 @@ cc.Class({
 
     onLoad: function () {
         this.anim = this.getComponent(cc.Animation);
+        this.canvas = cc.find('Canvas');
     },
 
     flipLeft: function() {
@@ -33,8 +34,8 @@ cc.Class({
     
     fire: function() {
         var bulletNode = cc.instantiate(this.bulletPrefab);
-        bulletNode.setPosition(new cc.Vec2(0,0));
-        this.node.addChild(bulletNode);
+        bulletNode.setPosition(this.node.position);
+        this.canvas.addChild(bulletNode);
     },
     
     onCollisionEnterCallback:function(callback) {

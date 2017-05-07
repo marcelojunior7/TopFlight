@@ -1,4 +1,12 @@
 
+var DirectionBullet = cc.Enum({
+   Left: 0,
+   Right: 1,
+   Top: 2,
+   Bottom: 3
+});
+
+
 cc.Class({
     extends: cc.Component,
     properties: {
@@ -7,7 +15,12 @@ cc.Class({
         shootClip: {
             default: null,
             url: cc.AudioClip
-        }
+        },
+        
+        direction: {
+            default: DirectionBullet.Right,
+            type: DirectionBullet
+        },
     },
 
     // use this for initialization
@@ -20,7 +33,26 @@ cc.Class({
     },
 
     update: function (dt) {
-        this.node.y += this.speed * dt;
+        switch (this.direction) {
+            case DirectionBullet.Right:
+            this.node.x += this.speed * dt;
+            break;
+                
+            case DirectionBullet.Left:
+            this.node.x -= this.speed * dt;
+            break;
+                
+            case DirectionBullet.Top:
+            this.node.y += this.speed * dt;
+            break;
+                
+            case DirectionBullet.Bottom:
+            this.node.y -= this.speed * dt;
+            break;
+            
+            default:
+            break;
+        }
     },
 });
 
