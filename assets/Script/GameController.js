@@ -27,7 +27,7 @@ cc.Class({
     onLoad: function () {
         cc.sys.localStorage.setItem('Score', 0);
         cc.director.getCollisionManager().enabled = true;
-        cc.director.getCollisionManager().enabledDebugDraw = false;
+        cc.director.getCollisionManager().enabledDebugDraw = true;
         this.prepareLifes();
         this.canvas = cc.find('Canvas');
         var self = this;
@@ -47,10 +47,6 @@ cc.Class({
         this.player.getComponent('Player').onCollisionEnterCallback(function() {
             self.removeLife();
         });
-        
-        this.node.on('teste', function() {
-            cc.log("AQUI JHOW");
-        })
     },
     
     prepareLifes: function() {

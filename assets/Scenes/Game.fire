@@ -933,7 +933,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -379,
+      "x": -209,
       "y": -12
     },
     "_skewX": 0,
@@ -1155,7 +1155,7 @@
     "node": {
       "__id__": 25
     },
-    "_enabled": true,
+    "_enabled": false,
     "tag": 1,
     "_offset": {
       "__type__": "cc.Vec2",
@@ -1816,7 +1816,7 @@
       "__id__": 46
     },
     "_enabled": true,
-    "spawnTime": 1,
+    "spawnTime": 2,
     "enemyPrefab": {
       "__uuid__": "ec78fbde-6e87-430e-990d-d34d071afa34"
     }

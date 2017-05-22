@@ -1,13 +1,9 @@
-
+var Airplane = require('Airplane');
 
 cc.Class({
-    extends: cc.Component,
+    extends: Airplane,
 
     properties: {
-         bulletPrefab: {
-            default: null,
-            type: cc.Prefab
-        },
         speed:0,
         delayMove:0,
         delayShoot:0,
@@ -15,32 +11,9 @@ cc.Class({
     },
 
     onLoad: function () {
-        this.anim = this.getComponent(cc.Animation);
+        this.load();
         this.waitShoot = this.delayShoot;
         this.waitMove = this.delayMove;
-        this.canvas = cc.find('Canvas');
-    },
-
-    flipLeft: function() {
-        cc.log("flipLeft");
-        var animState = this.anim.play('FlipLeft');
-        animState.repeatCount = 1;
-        animState.wrapMode = cc.WrapMode.Normal;
-        animState.speed = 1.5;
-    },
-    
-    flipRight: function() {
-        cc.log("flipRight");
-        var animState = this.anim.play('FlipRight');
-        animState.repeatCount = 1;
-        animState.wrapMode = cc.WrapMode.Normal;
-        animState.speed = 1.5;
-    },
-    
-    fire: function() {
-        var bulletNode = cc.instantiate(this.bulletPrefab);
-        bulletNode.setPosition(this.node.position);
-        this.canvas.addChild(bulletNode);
     },
 
     onCollisionEnter: function (other, self) {
